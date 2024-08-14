@@ -1,1 +1,406 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$food-app-primary: mat.define-palette(mat.$indigo-palette);
+$food-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$food-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$food-app-theme: mat.define-light-theme((
+  color: (
+    primary: $food-app-primary,
+    accent: $food-app-accent,
+    warn: $food-app-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($food-app-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+//My global styles
+
+
+:root {
+  --small-screen-font-size: 1.2rem;
+  --medium-screen-font-size: 1.3rem;
+  --large-screen-font-size: 1.4rem;
+  --extra-large-screen-font-size: 1.5rem;
+
+  --small-screen-padding-top: 2rem;
+  --small-screen-padding-left-right: 1rem;
+
+  --medium-screen-padding-top: 3rem;
+  --medium-screen-padding-left-right: 2rem;
+
+  --large-screen-padding-top: 4rem;
+  --large-screen-padding-left-right: 3rem;
+
+  --extra-large-screen-padding-top: 5rem;
+  --extra-large-screen-padding-left-right: 4rem;
+
+  --background-color: #18181b;
+  --text-color: #a1a1aa;
+  --main-text-color: #4aa35a;
+}
+
+
+// Variables for default font sizes
+$default-span-font-size: 1rem; // Default font size for spans
+$default-p-font-size: 1rem; // Default font size for paragraphs
+$default-h1-font-size: 2.5rem; // Default font size for h1
+$default-h2-font-size: 2rem; // Default font size for h2
+$default-h3-font-size: 1.8rem; // Default font size for h3
+$default-h4-font-size: 1.6rem; // Default font size for h4
+$default-h5-font-size: 1.4rem; // Default font size for h5
+$default-h6-font-size: 1.2rem; // Default font size for h6
+
+// Default font sizes for spans, paragraphs, and heading elements
+span {
+  font-size: $default-span-font-size;
+}
+body {
+
+
+  &.toggle .grid * {
+    transition-duration: 0s !important;
+  }
+
+  overflow-x: hidden;
+}
+
+//vars
+  $text-main:#4AA35A;
+  $text-dark-gray: #3A3A3D;
+  $bg-dark-main: #1f263e;
+  
+//buttons
+
+button{
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 0.5rem;
+  // margin: 5px 0;
+  &.primary{
+      background-color: #4AA35A;
+      color: #fff;
+
+      &:hover{
+          opacity: 0.7;
+      }
+  }
+
+  &.red-outline{
+      border: 1px solid red;
+      background-color: transparent;
+      color: red;
+      &.hover{
+          background-color: #4AA35A;
+          color: #fff;
+          background-color: red;
+          opacity: 0.7;
+
+      }
+  }
+
+  
+  // Media queries for adjusting font size and padding on different screen sizes
+  @media screen and (max-width: 576px) {
+    font-size: 1rem; // Adjusted font size for extra-small screens
+    padding: 0.5rem 1rem; // Adjusted padding for extra-small screens
+  }
+
+  @media screen and (min-width: 577px) and (max-width: 768px) {
+    font-size: 1.1rem; // Adjusted font size for small screens
+    padding: 0.6rem 1.2rem; // Adjusted padding for small screens
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 992px) {
+    font-size: 1.2rem; // Adjusted font size for medium screens
+    padding: 0.7rem 1.5rem; // Default padding for medium screens
+  }
+
+  @media screen and (min-width: 993px) and (max-width: 1200px) {
+    font-size: 1.3rem; // Adjusted font size for large screens
+    padding: 0.8rem 1.8rem; // Adjusted padding for large screens
+  }
+
+  @media screen and (min-width: 1201px) {
+    font-size: 1.4rem; // Adjusted font size for extra-large screens
+    padding: 0.9rem 2rem; // Adjusted padding for extra-large screens
+  }
+
+}
+
+
+.main-content-header {
+  color: #494949;
+  font-weight: bold;
+  font-size: 25px;
+
+  @media (max-width: 991px) {
+    .main-content-header {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .main-content-header {
+      font-size: 16px;
+    }
+  }
+}
+
+.main-content-text {
+  color: #49494980;
+  font-weight: 500;
+
+  @media (max-width: 991px) {
+    .main-content-header {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .main-content-header {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+
+// Default font sizes for spans, paragraphs, and heading elements
+span {
+  font-size: $default-span-font-size;
+}
+
+p {
+  font-size: $default-p-font-size;
+}
+
+h1 {
+  font-size: $default-h1-font-size;
+}
+
+h2 {
+  font-size: $default-h2-font-size !important;
+}
+
+h3 {
+  font-size: $default-h3-font-size;
+}
+
+h4 {
+  font-size: $default-h4-font-size;
+}
+
+h5 {
+  font-size: $default-h5-font-size;
+}
+
+h6 {
+  font-size: $default-h6-font-size;
+}
+
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
+  font-size: inherit; // Inherit font size from parent h element
+}
+
+// Media queries for font size adjustments on different screen sizes
+@media (max-width: 576px) {
+  span {
+    font-size: $default-span-font-size - 0.2rem; // Adjust font size for small screens
+  }
+
+  p {
+    font-size: $default-p-font-size - 0.2rem; // Adjust font size for small screens
+  }
+
+  h1 {
+    font-size: $default-h1-font-size - 0.3rem; // Adjust font size for small screens
+  }
+
+  h2 {
+    font-size: $default-h2-font-size - 0.3rem !important; // Adjust font size for small screens
+  }
+
+  h3 {
+    font-size: $default-h3-font-size - 0.2rem; // Adjust font size for small screens
+  }
+
+  h4 {
+    font-size: $default-h4-font-size - 0.2rem; // Adjust font size for small screens
+  }
+
+  h5 {
+    font-size: $default-h5-font-size - 0.2rem; // Adjust font size for small screens
+  }
+
+  h6 {
+    font-size: $default-h6-font-size - 0.2rem; // Adjust font size for small screens
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  span {
+    font-size: $default-span-font-size - 0.1rem; // Adjust font size for medium screens
+  }
+
+  p {
+    font-size: $default-p-font-size - 0.1rem; // Adjust font size for medium screens
+  }
+
+  h1 {
+    font-size: $default-h1-font-size - 0.2rem; // Adjust font size for medium screens
+  }
+
+  h2 {
+    font-size: $default-h2-font-size - 0.2rem !important; // Adjust font size for medium screens
+  }
+
+  h3 {
+    font-size: $default-h3-font-size - 0.1rem; // Adjust font size for medium screens
+  }
+
+  h4 {
+    font-size: $default-h4-font-size - 0.1rem; // Adjust font size for medium screens
+  }
+
+  h5 {
+    font-size: $default-h5-font-size - 0.1rem; // Adjust font size for medium screens
+  }
+
+  h6 {
+    font-size: $default-h6-font-size - 0.1rem; // Adjust font size for medium screens
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  span {
+    font-size: $default-span-font-size; // No adjustment for large screens
+  }
+
+  p {
+    font-size: $default-p-font-size; // No adjustment for large screens
+  }
+
+  h1 {
+    font-size: $default-h1-font-size; // No adjustment for large screens
+  }
+
+  h2 {
+    font-size: $default-h2-font-size !important; // No adjustment for large screens
+  }
+
+  h3 {
+    font-size: $default-h3-font-size; // No adjustment for large screens
+  }
+
+  h4 {
+    font-size: $default-h4-font-size; // No adjustment for large screens
+  }
+
+  h5 {
+    font-size: $default-h5-font-size; // No adjustment for large screens
+  }
+
+  h6 {
+    font-size: $default-h6-font-size; // No adjustment for large screens
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  span {
+    font-size: $default-span-font-size; // No adjustment for extra-large screens
+  }
+
+  p {
+    font-size: $default-p-font-size; // No adjustment for extra-large screens
+  }
+
+  h1 {
+    font-size: $default-h1-font-size; // No adjustment for extra-large screens
+  }
+
+  h2 {
+    font-size: $default-h2-font-size !important; // No adjustment for extra-large screens
+  }
+
+  h3 {
+    font-size: $default-h3-font-size; // No adjustment for extra-large screens
+  }
+
+  h4 {
+    font-size: $default-h4-font-size; // No adjustment for extra-large screens
+  }
+
+  h5 {
+    font-size: $default-h5-font-size; // No adjustment for extra-large screens
+  }
+
+  h6 {
+    font-size: $default-h6-font-size; // No adjustment for extra-large screens
+  }
+}
+
+@media (min-width: 1201px) {
+  span {
+    font-size: $default-span-font-size; // No adjustment for extra-extra-large screens
+  }
+
+  p {
+    font-size: $default-p-font-size; // No adjustment for extra-extra-large screens
+  }
+
+  h1 {
+    font-size: $default-h1-font-size; // No adjustment for extra-extra-large screens
+  }
+
+  h2 {
+    font-size: $default-h2-font-size !important; // No adjustment for extra-extra-large screens
+  }
+
+  h3 {
+    font-size: $default-h3-font-size; // No adjustment for extra-extra-large screens
+  }
+
+  h4 {
+    font-size: $default-h4-font-size; // No adjustment for extra-extra-large screens
+  }
+
+  h5 {
+    font-size: $default-h5-font-size; // No adjustment for extra-extra-large screens
+  }
+
+  h6 {
+    font-size: $default-h6-font-size; // No adjustment for extra-extra-large screens
+  }
+}
+
+

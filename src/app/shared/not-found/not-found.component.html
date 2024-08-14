@@ -1,0 +1,32 @@
+<div class="container" [class]="notFoundFullHeight ? 'vh-100 d-flex justify-content-center align-items-center' : ''">
+    <div class="d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column">
+      <div class="notFoundContent d-flex flex-column justify-content-around">
+        <figure class="w-75 text-center">
+          <img src="../../../assets/imgs/4 4logo.svg" class="w-75" alt="food recipe img">
+        </figure>
+        <div class="content d-flex flex-column gap-4">
+          <h2>Oops....</h2>
+          <p class="not-found">Page not found</p>
+          <p class="w-50">
+            This Page doesn’t exist or was removed!
+            or the item you search for is not exist
+            We suggest you back to home.
+          </p>
+          <button class="primary" routerLink="/dashboard">
+            <i class="fa-solid fa-chevron-left"></i> Back To Home
+          </button>
+        </div>
+      </div>
+  
+      <div class="d-flex position-relative">
+        <figure class="position-absolute w-100 bottom-0 end-0 mb-0">
+          <img src="../../../assets/imgs/robot.svg" class="w-100" alt="robot img">
+        </figure>
+        <figure class="w-100">
+          <img src="../../../assets/imgs/Vector.svg" class="w-100" alt="vector img">
+        </figure>
+      </div>
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,74 @@
+@import '../../styles.scss';
+
+.auth{
+    background-image: url('../../assets/imgs/bg-login.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow-y: auto;
+
+    //auth Styles
+
+.auth-card{
+    
+    background-color: #fff;
+    border-radius: 16px;
+    // overflow-y: scroll;
+    
+    .input-group{
+        span, input{
+            background-color: #F7F7F7;
+            padding: 0.5rem;
+
+        }
+        input{
+            &::placeholder{
+                font-size: 1rem;
+                color: #8391A1;
+            }
+        }
+        span{
+            i{
+                color: #8391A1;
+            }
+        }
+    }
+    .row{
+        p{
+            font-size: small;
+        }
+    }
+
+    h1{
+        color: #494949;
+        font-size: 25px;
+    }
+    p{
+        color: rgb(73, 73, 73,0.6);
+    }
+    i{
+        color: #49494999;
+    }
+    .links{
+        display: flex;
+        justify-content: space-between;
+        .text-dark-gray{
+            color: $text-dark-gray;
+        }
+        .text-main{
+            color: $text-main;
+        }
+        a{
+            text-decoration: none;
+        }
+        a.text-dark-gray:hover{
+            color:$text-main ;
+        }
+        a.text-main:hover{
+            color:$text-dark-gray;
+        }
+    }
+}
+
+ }

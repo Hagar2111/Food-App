@@ -1,0 +1,24 @@
+<section class="d-flex justify-content-center align-items-center bg-black bg-opacity-25 vh-100">
+    <div class="category bg-white p-5 d-flex flex-column gap-5 rounded-3">
+      <!-- Title and close button -->
+      <div class="d-flex justify-content-between align-items-center">
+        <h3>{{ data.edit ? 'Edit' : 'Add' }} Category</h3>
+        <i class="fa-solid fa-xmark-circle fa-2x text-danger" role="button" (click)="onNoClick()"></i>
+      </div>
+  
+      <!-- Form to add/edit category -->
+      <form [formGroup]="addEditForm" class="d-flex flex-column gap-5">
+        <!-- Input field for category name -->
+        <input type="text" class="form-control" formControlName="name" [(ngModel)]="data.name" placeholder="Category Name">
+  
+        <!-- Buttons for actions -->
+        <div class="d-flex justify-content-between align-items-center">
+          <button class="danger-outline px-2 py-1" (click)="onNoClick()" type="button">Cancel</button>
+          <button class="primary-outline px-2 py-1" [mat-dialog-close]="addEditForm.value"
+            [disabled]="addEditForm.invalid">{{ data.edit ? 'Edit' : 'Add' }}</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  

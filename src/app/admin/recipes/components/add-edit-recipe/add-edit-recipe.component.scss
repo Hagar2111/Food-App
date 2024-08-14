@@ -1,0 +1,37 @@
+@import '../../../../../assets/styles/green-top-header.scss';
+
+
+section{
+    
+  .fill-recipe {
+    background-color: #f0ffef;
+  
+    h2 {
+      span {
+        color: #009247;
+      }
+    }
+  }
+  
+   form{
+    ngx-dropzone{
+        background-color:#f0ffef ;
+        border: 2px dashed #009247;
+        span{
+            color: #009247;
+        }
+    }
+    mat-form-field{
+        margin-bottom: -1rem;
+    }
+    input{
+        height: 3.4rem;
+    }
+    textarea{
+        height: 6rem;
+    }
+   }
+    button{
+        padding: 0.5rem 1.5rem;
+    }
+}

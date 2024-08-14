@@ -1,0 +1,34 @@
+
+<section class="d-flex justify-content-center align-items-center bg-black bg-opacity-25  ">
+    <div class="category bg-white p-5 d-flex flex-column justify-content-center  gap-2 rounded-3">
+      <!-- Title and close button -->
+        <div class="d-flex  justify-content-between align-items-center">
+            <h3> Recipe Details</h3>
+            <i class="fa-solid fa-xmark-circle fa-2x text-danger" role="button" (click)="onNoClick()"></i>
+        </div>
+
+            <div class="w-25 m-auto">
+                <img class="w-100" [src]=" imgUrl + data.imagePath " alt=""/> 
+            </div>
+            <div class="d-flex  justify-content-between align-items-center">
+                <h5>Recipe Name : </h5> <span class="text-muted">{{data.name}}</span>
+            </div>
+            <div class="d-flex  justify-content-between align-items-center">
+                <h5>Price: </h5> <span class="text-muted">{{data.price}}</span>
+            </div>
+            <div class="d-flex  justify-content-between align-items-center">
+                <h5>Creation Date: </h5> <span class="text-muted">{{data.creationDate|date:'dd/MM/yyyy hh-mm a'}}</span>
+            </div>
+
+            <div class="d-flex  justify-content-between align-items-center">
+                <h5>Modification Date: </h5> <span class="text-muted">{{data.modificationDate|date:'dd/MM/yyyy hh-mm a'}}</span>
+            </div>
+  
+
+        <!-- Buttons for actions -->
+        <div class="d-flex justify-content-between align-items-center mt-2">
+            <button class="btn btn-outline-danger px-2 " [mat-dialog-close]="data" cdkFocusInitial>Close</button>
+        </div>
+    </div>
+
+  </section>

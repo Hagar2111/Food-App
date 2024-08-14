@@ -1,0 +1,48 @@
+@import '../../../styles.scss';
+
+
+.sidebar {
+    width: 70px; /* Initial width of the sidebar */
+    transition: width 0.3s; /* Smooth transition for expanding and collapsing */
+    border-top-right-radius: 58px;
+    background-color: $bg-dark-main;
+
+  }
+  
+  .expand {
+    width: 240px; /* Expanded width of the sidebar */
+    transition: width 0.3s;
+  }
+  
+  .toggle-btn {
+    background-color: transparent;
+    height: 90px;
+  }
+  
+  .toggle-expand {
+    width: 200px;
+  }
+  
+  .item {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px 0px;
+    span {
+      margin: 0px 5px;
+    }
+  }
+  
+  .active-ul {
+    background-color: #00924e26;
+  }
+
+// @media (min-width: 577px) and (max-width: 775px){
+//   .toggle-btn{
+//     height: 1rem;
+
+//   }
+//   .toggle-expand{
+//     width: 100%;
+//   }
+// }

@@ -1,0 +1,53 @@
+<section class="top-section mt-5 text-center bg-main pt-3 ps-sm-5 ">
+    <!-- Top Section Header -->
+    <article class="row justify-content-around align-items-center ">
+      <!-- Left Column -->
+      <div class="col-md-6 col-12">
+        <!-- Welcome Message -->
+        <h2 class="d-flex gap-2 text-white">
+          <span class="fw-bolder">Welcome</span>
+          <span class="fw-normal">{{ userName }}</span>
+        </h2>
+        <!-- Description -->
+        <p class="mb-0 mt-3 text-start text-white">
+          This is a welcoming screen for the entry of the application , you can now see the options
+        </p>
+      </div>
+      <!-- Right Column -->
+      <div class="col-md-6 col-12 imgBx d-flex justify-content-end">
+        <!-- Image -->
+        <figure class="mb-0">
+          <img src="../../../../assets/imgs/vegan.png" class="w-75" alt="vegan">
+        </figure>
+      </div>
+    </article>
+  </section>
+  
+  <section class="mt-3 text-start">
+    <!-- Loop through roles -->
+    <ng-container *ngFor="let item of role">
+      <!-- Display active role -->
+      <div class="fill-recipe rounded-4 px-5 py-4" *ngIf="item.isActive">
+        <!-- Role Content -->
+        <div class="row align-items-center justify-content-between">
+          <!-- Left Column -->
+          <div class="col-md-6 col-12">
+            <!-- Role Title -->
+            <h2 class="fw-bolder">{{ item.text }} <span>Recipes!</span></h2>
+            <!-- Role Description -->
+            <p class="mb-0">
+              {{ item.content }}
+            </p>
+          </div>
+          <!-- Right Column -->
+          <div class="col-md-6 col-12 text-end mt-3 mt-mt-md-0 mt-lg-0 mt-xl-0">
+            <!-- Button to navigate to respective role -->
+            <button class="primary fw-bold" [routerLink]="item.link">
+              {{ item.textButton }} <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </section>
+  

@@ -1,0 +1,130 @@
+    <section class=" top-section p-4 mt-3">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div>
+                    <h1>Users <span>item</span></h1>
+                    <p>You can now add your items that any user can order it from the Application and you can edit</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-end">
+                <div>
+                    <img src="../../../assets/imgs/menu-avatar.svg" class="w-75" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+
+    <div>
+        <div class="d-flex align-items-center my-3">
+            <h2 class="h4">Users Table Details</h2> 
+        </div>
+        <button class="primary" >Add New User</button>
+        <p>You can check all datails</p>
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="example-form-field" class="w-100" appearance="outline">
+                            <mat-label>Search Users</mat-label>
+                            <input matInput type="text" [(ngModel)]="searchValue" (keyup.enter)="getUsersData()" >
+                            <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''; getUsersData()">
+                              <mat-icon>close</mat-icon>
+                            </button>
+                          </mat-form-field>
+                          
+                    </div>
+                    <div class="col-md-3">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>Role</mat-label>
+                            <mat-select multiple="" [(ngModel)]="roleIds" (selectionChange)="getUsersData()">
+                              <mat-option value="0">All </mat-option>
+                              <mat-option value="1">Admin </mat-option>
+                              <mat-option value="2">User </mat-option>
+                              <mat-option *ngFor="let tag of listTags" [value]="tag.id">{{tag.name}}</mat-option>
+                              
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <div class="col-md-3">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>Search By</mat-label>
+                            <mat-select  multiple [(ngModel)]="parameterKey" (selectionChange)="getUsersData()">
+                            <!-- <mat-option value="0">All </mat-option> -->
+                            <mat-option value="userName">Name </mat-option>
+                            <mat-option value="email">Email </mat-option>
+                            <mat-option value="country">Country </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>email</th>
+                    <th>phoneNumber</th>
+                    <th>country</th>
+                    <th>role</th>
+                    <th>Action</th>
+                </thead>
+                <tbody *ngIf="listData.data.length > 0">
+                    <tr *ngFor="let item of listData.data">
+                        <td>{{item.userName}}</td>
+                        <td>
+                            <img [src]="item.imagePath? baseUrl+item.imagePath : emptyImg" alt="" class="">
+                        </td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.phoneNumber}}</td>
+                        <td>{{item.country}}</td>
+                        <td>{{item.group.name}}</td>
+                        
+                        <td>
+                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                              <mat-icon>more_vert</mat-icon>
+                            </button>
+                              <mat-menu #menu="matMenu"  >
+                                <button (click)="openViewUserDialog(item)" mat-menu-item>
+                                    <mat-icon>visibility</mat-icon>
+                                  <span>View</span>
+                                </button>
+                                
+                                <button (click)="openDeleteDialog(item.id)" mat-menu-item>
+                                    <mat-icon>delete</mat-icon>
+                                  <span>Delete</span>
+                                </button>
+                              </mat-menu>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div *ngIf="noDataFound" class="mt-4 text-center d-flex flex-column align-items-center" >
+    
+                <div>
+                  <img width="250px" src="../../../assets/imgs/delete-img.svg" alt="no data">
+                </div>
+            
+                <h3 class="mt-3">No Data !</h3>
+                <p class="mt-2 text-muted ">Unfortunatily, no data found. </p>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <mat-paginator #paginator
+                class="demo-paginator"
+                (page)="handlePageEvent($event)"
+                [length]="listData?.totalNumberOfRecords"
+                [pageSize]="pageSize"
+                [pageIndex]="pageNumber"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                
+                aria-label="Select page">
+                </mat-paginator>
+            </div>
+        </div>
+        
+    </div>
+</section>

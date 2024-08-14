@@ -1,0 +1,22 @@
+<section class="bg-dark-main vh-100 position-fixed col-md-2 sidebar" [ngClass]="{ 'expand': collapse }">
+    <button class="button p-0 m-0 toggle-btn"  [ngClass]="{ 'toggle-expand mb-1': collapse }" >
+      <img src="../../../assets/imgs/logo-no-text.svg" class="w-100 logo" />
+    </button>
+  
+  <div class="mt-5">
+    <ul class="px-0 list-unstyled" [ngClass]="{ 'text-center': !collapse }">
+      <ng-container *ngFor="let item of menu">
+        <li *ngIf="item.isActive">
+          <a
+            [routerLink]="item.link"
+            routerLinkActive="active-ul"
+            class="item d-block"
+          >
+            <span><i [class]="item.icon"></i></span>
+            <span *ngIf="collapse">{{ item.text }}</span>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</section>

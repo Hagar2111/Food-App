@@ -1,0 +1,19 @@
+<section>
+    <div class="container-fluid">
+        <div class="row overflow-x-hidden">
+            <!-- Sidebar Column -->
+            <div [class]="!collapseCol ? 'col-md-2 col-sm-12' : 'col-md-1 col-sm-12'" class="animatedToggle px-0 z-3 sidebar">
+                <!-- Sidebar Component with sidebarCollapsed event listener -->
+                <app-sidebar [collapse]="!collapseCol" (click)="toggleSidebar()"></app-sidebar>
+            </div>
+            <!-- Main Content Column -->
+            <div [class]="!collapseCol ? 'col-md-10 col-sm-12 px-5' : 'col-md-11 col-sm-12 px-4'" class="animatedToggle py-3">
+                <!-- Navbar Component -->
+                <app-navbar></app-navbar>
+                <!-- Router Outlet for rendering dynamic content -->
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</section>
+  
