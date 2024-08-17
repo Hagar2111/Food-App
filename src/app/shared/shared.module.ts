@@ -19,6 +19,7 @@ import { UpdateProfileComponent } from './components/update-profile/update-profi
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import {MatCardModule} from '@angular/material/card';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SmallScreenNavbarComponent } from './small-screen-navbar/small-screen-navbar.component';
 
 
 
@@ -27,7 +28,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SidebarComponent, 
     NavbarComponent, 
     HomeComponent, 
-    DeleteComponent, UpdateProfileComponent, NotFoundComponent
+    DeleteComponent, 
+    UpdateProfileComponent, 
+    NotFoundComponent, 
+    SmallScreenNavbarComponent
   ],
   imports: [
     CommonModule,
@@ -49,6 +53,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     RouterModule,
     SidebarComponent,
     NavbarComponent,
+    SmallScreenNavbarComponent,
     MatMenuModule,
     MatIconModule,
     MatDialogModule,

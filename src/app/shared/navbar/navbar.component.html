@@ -1,4 +1,4 @@
-<nav class="px-3 py-2 d-flex gap-1 align-items-center  ">
+<nav class="px-3 py-2 navbar navbar-expand-lg ">
     <div class="input-group mb-0 rounded-5">
       <span class="input-group-text" id="basic-addon1">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -7,11 +7,11 @@
         aria-describedby="basic-addon1">
     </div>
     <div class="mb-0 d-flex align-items-center justify-content-end">
-      <figure class="mb-0 w-25 text-center">
+      <figure class="mb-0 w-25 text-end">
         <img [src]="currentUser.imagePath ? imgUrl + currentUser.imagePath : emptyUserImg" class="w-50 rounded-circle"
           [alt]="'userImage' + currentUser.userName">
       </figure>
-      <div class="userName d-flex gap-1 align-items-center">
+      <div class="userName d-flex align-items-center ml-1">
         <p class="mb-0 fw-bold">{{ currentUser.userName ? currentUser.userName : 'User' }}</p>
         <div>
           <button mat-icon-button [matMenuTriggerFor]="menu" class="text-white position-relative z-3"

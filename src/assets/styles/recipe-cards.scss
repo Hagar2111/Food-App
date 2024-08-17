@@ -1,11 +1,9 @@
 @import'../../styles.scss';
 
-.container-fluid {
-    max-width: 1400px;
-
-}
-
 .card {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
     background: #fff;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.408), 10px 10px 10px rgba(0, 0, 0, 0.436);
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
@@ -36,7 +34,7 @@
     width: 100%;
     min-height: 250px;
     max-height: 250px;
-    object-fit: contain;
+    object-fit: cover;
     // padding: 30px;
 }
 
@@ -60,7 +58,7 @@
     padding: 5px 10px 5px 10px;
     font-size: .7rem;
     font-weight: 600;
-    border-radius: 3px;
+    border-radius:  1rem;
     text-transform: uppercase;
 }
 

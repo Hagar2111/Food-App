@@ -1,3 +1,6 @@
+@import '../../../styles.scss';
+
+
 .animatedToggle {
     transition: all 0.3s ease-in-out ;
 }
@@ -5,10 +8,19 @@
     margin-left: 75px;
 }
 
-@media (min-width: 577px) and (max-width: 775px){
-    // .sidebar{
-    //     width: 100%;
-    //     height: 70px;
-    //     position: sticky;
-    // }
+
+
+@media  (max-width: 775px){
+    app-sidebar{
+        display: none;
+    }
+    app-small-screen-navbar{
+        display: flex;
+    }
+}
+@media  (min-width: 775px){
+   
+    app-small-screen-navbar{
+        display: none;
+    }
 }

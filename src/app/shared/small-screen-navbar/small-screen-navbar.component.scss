@@ -1,0 +1,25 @@
+@import '../../../styles.scss';
+
+.sec-nav{
+    background-color: $bg-dark-main;
+    border-radius: 1rem;
+
+    .item {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px;
+        margin: 5px 0px;
+        span {
+          margin: 0px 5px;
+        }
+      }
+
+    ul{
+        margin: auto 0;
+    }
+
+    .navbar-collapse{
+        flex-grow: 0;
+    }
+}
+

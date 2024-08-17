@@ -6,14 +6,13 @@
             <h3> Recipe Details</h3>
             <i class="fa-solid fa-xmark-circle fa-2x text-danger" role="button" (click)="onNoClick()"></i>
         </div>
-
+            <div class="img-view">
+                <img class="h-100 rounded-4" [src]="data.imagePath? imgUrl + data.imagePath : emptyImage " alt="recipe"/> 
+            </div>
             <div class="d-flex  justify-content-between align-items-center">
                 <h5>Recipe Name : </h5> <span class="text-muted">{{data.name}}</span>
             </div>
-            <div class="">
-                <img class="" [src]=" imgUrl + data.imagePath " alt=""/> 
-            </div>
-
+            
             <div class="d-flex  justify-content-between align-items-center">
                 <h5>Price: </h5> <span class="text-muted">{{data.price}}</span>
             </div>

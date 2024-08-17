@@ -17,7 +17,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class UsersComponent {
   
   baseUrl:string = "https://upskilling-egypt.com:3006/";
-  emptyImg:string = "../../../assets/imgs/logo-no-text.svg";
+  emptyImg:string = "../../../assets/imgs/emptyUser.png";
   pageSize: number =10;
   pageNumber: number =1;
   categoryItem:string = '';
@@ -77,23 +77,6 @@ export class UsersComponent {
 }
 
 
-  // openViewUserDialog(userId:number): void {
-  //   this._UsersService.getUserById(userId).subscribe({
-  //     next: (response) => {
-  //       const dialogRef = this.dialog.open(ViewUserComponent, {
-  //         height: '100%',
-  //         width: '100%',
-  //         maxWidth: '100%',
-  //         maxHeight: '100%',
-  //         data: response
-  //       })
-  
-  //       dialogRef.afterClosed().subscribe(result => {
-  //         console.log(result);
-  //       })
-  //     }
-  //   })
-  // }
   openViewUserDialog(userData:any): void {
     const dialogRef = this.dialog.open(ViewUserComponent, {
       data:userData

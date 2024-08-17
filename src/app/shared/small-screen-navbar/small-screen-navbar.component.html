@@ -1,0 +1,24 @@
+<nav class="px-3 navbar mb-3 navbar-expand-lg navbar-dark w-100 sec-nav">
+    <figure class="  w-25 p-0 m-0 me-auto"   >
+        <img src="../../../assets/imgs/logo-no-text.svg" class="w-25 logo" />
+    </figure>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="px-0 navbar-nav " >
+            <ng-container *ngFor="let item of menu">
+            <li *ngIf="item.isActive" class="nav-item">
+                <a
+                [routerLink]="item.link"
+                routerLinkActive="active-ul"
+                class="item d-block"
+                >
+                <span><i [class]="item.icon"></i></span>
+                <span >{{ item.text }}</span>
+                </a>
+            </li>
+            </ng-container>
+        </ul>
+    </div>
+</nav>

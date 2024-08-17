@@ -9,7 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class ViewRecipeComponent {
 
   imgUrl:string='https://upskilling-egypt.com:3006/';
-  emptyImage:string='./assets/img/no-recipce.jpg'
+  emptyImage:string='../../../../../assets/imgs/logo-no-text.svg'
 
   constructor(
     public dialogRef: MatDialogRef<ViewRecipeComponent>,

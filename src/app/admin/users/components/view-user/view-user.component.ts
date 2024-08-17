@@ -9,7 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class ViewUserComponent {
 
   baseUrl:string = "https://upskilling-egypt.com:3006/";
-  emptyImg:string = "../../../assets/imgs/logo-no-text.svg";
+  emptyImg:string = "../../../assets/imgs/emptyUser.png";
 
 
   constructor(
