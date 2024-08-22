@@ -26,20 +26,20 @@
             {{item.recipe.tag.name}}
           </div>
           <div class="card-body">
-            <div class="clearfix mb-1">
-            <span class=" float-start">{{item.recipe.name}}</span>
-              <span class="float-end badge rounded-pill bg-success">{{item.recipe.price | currency}}</span>
+            <div class="d-flex justify-content-between align-content-center mb-1">
+            <span >{{item.recipe.name}}</span>
+              <span class=" badge rounded-pill bg-success">{{item.recipe.price | currency}}</span>
             </div>
             <h5 class="card-title">
                 {{item.recipe.description}}
             </h5>
                
-            <div class="clearfix mb-1 ">
-              <span class="float-start">
+            <div class="d-flex justify-content-between align-items-center">
+              <span >
                 <a class="btn btn-card bold-btn" (click)="onOpenViewRecipeDialog(item.recipe.id)">View Recipe</a>
             </span>
   
-              <span class="float-end">
+              <span >
                 <i (click)="openDialogDelete(item.id)" class="fa-solid fa-trash-can text-danger fa-2x"></i>
             </span>
             </div>

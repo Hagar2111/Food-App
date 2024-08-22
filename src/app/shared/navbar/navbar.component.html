@@ -1,13 +1,13 @@
 <nav class="px-3 py-2 navbar navbar-expand-lg ">
-    <div class="input-group mb-0 rounded-5">
+    <div class="input-group mb-0 rounded-5 ">
       <span class="input-group-text" id="basic-addon1">
         <i class="fa-solid fa-magnifying-glass"></i>
       </span>
       <input type="text" class="form-control" placeholder="Search Here" aria-label="search"
         aria-describedby="basic-addon1">
     </div>
-    <div class="mb-0 d-flex align-items-center justify-content-end">
-      <figure class="mb-0 w-25 text-end">
+    <div class="mb-0 d-flex align-items-center justify-content-end justify-content-sm-center ">
+      <figure class="mb-0 p-1 w-25 text-end">
         <img [src]="currentUser.imagePath ? imgUrl + currentUser.imagePath : emptyUserImg" class="w-50 rounded-circle"
           [alt]="'userImage' + currentUser.userName">
       </figure>

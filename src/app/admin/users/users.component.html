@@ -61,17 +61,17 @@
             </div>
 
             <table class="table table-striped">
-                <thead>
+                <thead >
                     <th>Name</th>
                     <th>Image</th>
                     <th>email</th>
-                    <th>phoneNumber</th>
+                    <th>phoneNO.</th>
                     <th>country</th>
                     <th>role</th>
                     <th>Action</th>
                 </thead>
                 <tbody *ngIf="listData.data.length > 0">
-                    <tr *ngFor="let item of listData.data">
+                    <tr *ngFor="let item of listData.data" >
                         <td>{{item.userName}}</td>
                         <td>
                             <img [src]="item.imagePath? baseUrl+item.imagePath : emptyImg" alt="" class="">
