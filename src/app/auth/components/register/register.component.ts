@@ -77,7 +77,7 @@ export class RegisterComponent {
     },
     complete: ()=>{
       this.toastr.info('You signed up successfully' )
-      this._router.navigate(["/auth"]);
+      this._router.navigate(["/auth/verify"]);
     }
   })
   }
